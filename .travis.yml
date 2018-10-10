@@ -5,8 +5,10 @@ go_import_path: github.com/prometheus/alertmanager
 services:
 - docker
 
+# Whenever the Go version is updated here, .circleci/config.yml and .promu.yml
+# should also be updated.
 go:
-- 1.10.x
+- 1.11.x
 
 script:
 # test front-end
