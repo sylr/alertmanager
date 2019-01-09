@@ -783,7 +783,7 @@ func (api *API) respond(w http.ResponseWriter, data interface{}) {
 		Data:   data,
 	})
 	if err != nil {
-		level.Error(api.logger).Log("msg", "Error marshalling JSON", "err", err, "data", data)
+		level.Error(api.logger).Log("msg", "Error marshalling JSON", "err", err, "data", fmt.Sprintf("%#v", data))
 		return
 	}
 	w.Write(b)
